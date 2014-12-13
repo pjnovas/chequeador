@@ -1,0 +1,10 @@
+{
+  "db": {
+    "host": "localhost",
+    "user": "chequeador",
+    "password": "chequeador",
+    "database": "chequeador",
+    "pool": 5
+  },  
+  "session": "bl33d"
+}

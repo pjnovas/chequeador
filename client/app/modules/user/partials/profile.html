@@ -1,0 +1,25 @@
+<div class="row user-profile">
+    <div class="col-md-2">
+        <img src="{{profile.picture}}" alt="{{profile.name}}" class="profile-picture img-circle"/>
+    </div>
+    <div class="col-md-10">
+
+        <div class="row profile-info">
+            <span class="header">Perfil</span>
+            <h2 class="profile-name">{{profile.name}}</h2>
+        </div>
+        <div class="row profile-stats text-left">
+            <ul class="list-unstyled profile-statistics" ng-repeat='item in stats'>
+                <li class="text-left">{{statDescriptionByType(item.type)}} <span class="stats-amount">{{item.amount}}</span></li>
+            </ul>
+        </div>
+        <div class="row profile-action">
+            <a class="btn" ng-href="/">
+                   Seguir
+            </a>
+        </div>
+
+
+    </div>
+
+</div>

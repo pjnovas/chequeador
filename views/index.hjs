@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html lang="es" ng-app="checkApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html lang="es" ng-app="checkApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html lang="es" ng-app="checkApp" class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html lang="es" ng-app="checkApp" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>chequeador</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/bower_components/html5-boilerplate/css/normalize.css">
+        <link rel="stylesheet" href="/static/bower_components/html5-boilerplate/css/main.css">
+        <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/modules/checkup/checkup.css">
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/modules/user/user.css">
+
+        <link rel="stylesheet" href="/static/app.css">
+        <script src="/static/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="session-bar row">
+                <div class="brand col-md-9 col-xs-6">
+                    <a href="#/home">
+                        <img src="/static/img/logo.png" alt="logo"  height="37" width="209"/>
+                    </a>
+                </div>
+                <div class="login col-md-3 col-xs-6 text-left pull-right">
+                    {{#user}}
+                    <ul class="list-inline">
+                        <li><a href="/#/users/profile/{{id}}"><img class="login-picture" src="{{ picture }}"/></a></li>
+                        <li class="login-name">
+                            <div class="dropdown">
+                                <button class="btn" type="button"  class="dropdown-toggle" data-toggle="dropdown">
+                                    {{ name }}
+                                    <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#/users/profile/{{id}}">Perfil</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Salir</a></li>
+                                </ul>
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+                    {{/user}}
+                    {{^user}}
+                    <ul class="social-menu list-inline">
+                        <li class="hidden-xs">Login</li>
+                        <li><a href="/auth/facebook"> 
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a></li>
+                        <li><a href="/auth/twitter">
+                            <span class="fa-stack">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a></li>
+                        <!--li><a href="/auth/mail">
+
+                        </a></li-->
+                    </ul>
+                    {{/user}}
+                </div>
+            </div>
+        </div>
+
+
+        <div id="main_container" ng-view></div>
+
+        <div class="footer" >
+            <div class="col-md-6 text-left">
+                Es un proyecto de <img class="footer-brand" src="/static/img/logoChqFooter.png"></img>
+            </div>
+            <div class="sponsor col-md-6 text-right">
+                Acelerado por HackHackers
+            </div>
+        </div>
+
+        <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/static/bower_components/underscore/underscore-min.js"></script>
+
+        <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/static/bower_components/angular/angular.js"></script>
+        <script src="/static/bower_components/angular-route/angular-route.js"></script>
+        <script src="/static/bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="/static/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="/static/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="/static/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+
+        <script src="/static/js/services.js"></script>
+        <script src="/static/app.js"></script>
+        <script src="/static/modules/home/home.js?1"></script>
+        <script src="/static/modules/help/help.js?1"></script>
+
+        <script src="/static/modules/user/user.js"></script>
+        <script src="/static/modules/user/controllers.js"></script>
+
+        <script src="/static/modules/checkup/checkup.js"></script>
+        <script src="/static/modules/checkup/controllers.js"></script>
+        
+        {{#user}}
+        <script>
+            window.user_id = {{user.id}};
+        </script>
+        {{/user}}
+
+
+    </body>
+</html>

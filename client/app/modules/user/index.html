@@ -1,0 +1,28 @@
+<div ng-controller="UserController" >
+            
+    <div class="status-bar row">
+        <div class="col-md-12 status-action">
+            <a ng-href="#/checkup/new" ng-show="user_id">
+                Iniciar un Chequeo 
+                <i class="glyphicon glyphicon-play-circle"></i>
+            </a>
+            <a ng-href="#/users/login?url=home" ng-show="!user_id">
+                Iniciar un Chequeo 
+                <i class="glyphicon glyphicon-play-circle"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="user-module main-content" class="col-md-12">
+                <div ui-view></div>
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+

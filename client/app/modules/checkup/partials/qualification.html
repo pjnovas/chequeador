@@ -1,0 +1,181 @@
+<div class="container col-md-12" >
+
+    <div class="step-centered">
+
+        <article class="step-entry">
+
+            <div class="row">
+                <div class="step-entry-inner col-md-2">
+
+                    <div class="step-icon bg-active">
+                        1
+                    </div>
+                    <div class="step-label"> <br/> <br/> </div>
+
+                    <div class="step-icon bg-active">
+                        2
+                    </div>
+                    <div class="step-label"> <br/> <br/> </div>
+
+                    <div class="step-icon bg-active">
+                        3
+                    </div>
+                    <div class="step-label"> <br/> <br/> </div>
+
+                    <div class="step-icon bg-active">
+                        4
+                    </div>
+                    <div class="step-label"> <br/> <br/> </div>
+
+                </div>
+
+                <div class="well-sm col-md-10">
+
+                        <div ng-show="hasOwnVote && !editing && !persisted" class="row">
+
+                            <div class="row">
+                                
+                                <small>LA FRASE</small>
+                                <h2>"{{checkup.quote.text}}"</h2>
+             
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <small>TU VALORACION ES</small>
+                                    </div>
+                                    <div class="row">
+                                        <span class="btn bg-black  btn-block"> 
+                                            {{rate.qualification.description}}
+                                        </span>
+                                        <small>
+                                            {{rate.qualification_stats.votes}} voto(s) // {{rate.qualification_stats.percentage}}% 
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 center-block">
+                                        <span>
+                                            <i class="fa fa-arrow-right"></i>
+                                        </span>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <small>TU CALIFICACION ES</small>
+                                    </div>
+                                    <div class="row">
+                                        <span class="btn bg-green  btn-block"> 
+                                            {{rate.score.description}}
+                                        </span>
+                                        <small>
+                                            {{rate.score_stats.votes}} voto(s) // {{rate.score_stats.percentage}}% 
+                                        </small>
+                                    </div>
+                                </div>
+             
+                            </div>
+
+                            <!--button ng-click="addNewQualification()" class="btn">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </button>
+                            ¿Tienes otro criterio de calificación?
+                            <span class="call-atention">Sumalo!</span--> 
+                        </div>
+
+
+                        <div ng-show="editing" >
+
+                            <div class="row annotation">
+                                <small>
+                                    Segun tu criterio, y en base a la información disponible en la investigación, defini la veracidad de la frase
+                                </small>
+                            </div>
+
+                            <div class="row col-md-12 qualification-step" >
+
+                                <div class="col-md-3 qualification-col" ng-repeat="calification in quality_measures">
+                                    <div class="row">
+                                        <label ng-click="setType(calification.id)" class="btn btn-block qualify-item {{markQualifySelected(calification.id)}}" >
+                                            <span class="fa-stack pull-left" ng-switch on="qualify_type == calification.id">
+                                                <i class="fa fa-circle-thin fa-stack-1x" ng-switch-when="false"></i>
+                                                <i class="fa fa-circle fa-stack-1x status-green" ng-switch-when="true"></i>
+                                                <i class="fa fa-check fa-stack fa-inverse" ng-switch-when="true"></i>
+                                            </span>
+                                            <span class="qualify-description">{{calification.description}}</span>
+                                        </label>
+                                    </div>
+                                        
+                                    <div class="row" ng-show="qualify_type">
+                                        <span class="caret center-block"></span>
+                                    </div>
+
+                                    <div class="row score-col" ng-show="qualify_type"> 
+
+                                        <div ng-repeat="item in scoreByType(calification.id )" >
+                                            <div class="score-group">
+                                                <div class="">
+                                                    <label  ng-click="setScore(item.id)" class="btn btn-block score-item {{markScoreSelected(item.id)}}" ng-disabled="qualify_type != item.qualification">
+                                                        <span class="fa-stack pull-left" ng-switch on="markScoreSelected(item.id) == 'selected'">
+                                                            <i class="fa fa-circle-thin fa-stack-1x" ng-switch-when="false"></i>
+                                                            <i class="fa fa-circle fa-stack-1x status-green" ng-switch-when="true"></i>
+                                                            <i class="fa fa-check fa-stack fa-inverse" ng-switch-when="true"></i>
+                                                        </span> 
+                                                        <span class="score-description ">{{item.description}}</span>
+                                                    </label>
+                                                </div>
+                                                <div class="califications-amount">
+                                                    <br/>
+                                                    <div class="">
+                                                        <div class="progress col-md-9">
+                                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.id)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage(item.id)}}%;"> </div>
+                                                        </div>
+                                                        {{percentage(item.id)}}%
+                                                    </div>
+                                                    <br/>
+                                                    <div class="">
+                                                        <span class="text-left"> {{votesCount(item.id)}} votos </span>
+                                                    </diV>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div><!-- score-col -->
+
+                                </div><!--qual-col-->
+
+                            </div>
+
+                            <div class="row ">
+                                <div class="pull-right col-md-3">
+                                    <button type="submit" ng-click="addQualification()" class="btn ">
+                                        Finalizar 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-show="persisted">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <h2>Felicitaciones!</h2>
+                                    <h4>Finalizaste con éxito los cuatro pasos del proceso!</h4>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-3">
+                                    <button class="btn " ng-click="close()">
+                                       Volver al listado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+</div>
+

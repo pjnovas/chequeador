@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html lang="es" ng-app="checkApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html lang="es" ng-app="checkApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html lang="es" ng-app="checkApp" class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html lang="es" ng-app="checkApp" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>chequeador</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./bower_components/html5-boilerplate/css/normalize.css">
+        <link rel="stylesheet" href="./bower_components/html5-boilerplate/css/main.css">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./modules/checkup/checkup.css">
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./modules/user/user.css">
+
+        <link rel="stylesheet" href="./app.css">
+        <script src="./bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="session-bar row">
+                <div class="brand col-md-9">
+                    <a href="#/home">
+                    	<img src="img/logo.png" alt="logo" height="37" width="209">
+                    </a>
+                </div>
+                <div class="login col-md-3 text-left pull-right">
+                    <ul class="social-menu">
+                        <li class="login-name">
+                            <div class="dropdows">
+                                <span class="dropdown-toggle" data-toggle="dropdown">Nombre</span>
+                                <span class="caret"></span>
+
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+
+
+                        </li>
+
+                        <li><a href="/#/users/profile/2"><img class="login-picture" src=""/></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="main_container" ng-view></div>
+
+        <div class="footer" >
+            <div class="col-md-6 text-left">
+                Es un proyecto de <img class="footer-brand" src="img/logoChqFooter.png"></img>
+            </div>
+            <div class="sponsor col-md-6 text-right">
+                Acelerado por HackHackers
+            </div>
+        </div>
+
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/underscore/underscore-min.js"></script>
+
+        <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/angular-route/angular-route.js"></script>
+        <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+        <script src="./js/services.js"></script>
+        <script src="./app.js"></script>
+        <script src="./modules/home/home.js?1"></script>
+
+        <script src="./modules/help/help.js?1"></script>
+
+        <script src="./modules/user/user.js"></script>
+        <script src="./modules/user/controllers.js"></script>
+
+        <script src="./modules/checkup/checkup.js"></script>
+        <script src="./modules/checkup/controllers.js"></script>
+        
+        <script>
+            window.user_id = 2;
+        </script>
+
+
+    </body>
+</html>

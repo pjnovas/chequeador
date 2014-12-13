@@ -1,0 +1,40 @@
+<div class="container col-md-12">
+
+        <div class="step-centered">
+
+            <article class="step-entry {{isActive(step)}}" ng-repeat="step in phases">
+
+                <div class="step-entry-inner">
+
+                    <div class="step-icon {{isActive(step)}}">
+                        {{step.icon}}
+                    </div>
+
+                    <div class="step-label">
+                        <div ng-show="step.empty">
+                            <div class="step-call" ng-click="add(step.id)">
+                                {{step.text}}
+                            </div>
+                            <small class="pull-left text-muted">
+                                <span id="help-{{step.id}}" ng-click="show_help(step.id)">¿Que es esto?</span>
+                            </small>
+                        </div>
+                        <div ng-show="!step.empty">
+                            <div class="checkup-item-view" ng-click="edit(step.id)">
+
+                                <ng-include src="itemUrl(step.id)"/>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    
+</div>

@@ -1,0 +1,15 @@
+<small class="checkup-item-header">La valoración</small>
+<div class="row">
+
+    <div class="col-md-3 qualification-col" ng-repeat="item in quality_measures">
+
+        <div class="row">
+            <label class="btn btn-block qualify-item-preview" ng-class="{voted: isMaxVoted(item)}">
+                <span class="score-label">{{item.description}}
+                    <span class="glyphicon glyphicon-ok ok" ng-show="isMaxVoted(item)"></span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+</div>

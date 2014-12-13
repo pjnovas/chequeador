@@ -1,0 +1,275 @@
+button {
+	background-color: #F1F1F1;
+	text-transform: uppercase;
+}
+
+label {
+	font-family: "Roboto", sans-serif;
+	font-weight:300;
+	font-size:14px;
+	text-transform:uppercase;
+	color:#6F6F6F;
+}
+
+.btn-group {
+	padding:0px;  //reset padding de la botonera de fuentes
+}
+.resetCheck {
+	height:50%;
+}
+
+.step-centered {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.step-centered:before, .step-centered:after {
+    content: " ";
+    display: table;
+}
+
+.step-centered:after {
+    clear: both;
+}
+
+.step-centered:before, .step-centered:after {
+    content: " ";
+    display: table;
+}
+
+.step-centered:after {
+    clear: both;
+}
+
+.step-centered:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    background: #f5f5f6;
+    top: 20px;
+    bottom: 20px;
+    margin-left: 28px;
+}
+
+.step-centered .step-entry.bg-active:before {
+    background: #ff0000 !important;
+}
+
+.step-centered .step-entry {
+    position: relative;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.step-centered .step-entry:before, .step-centered .step-entry:after {
+    content: " ";
+    display: table;
+}
+
+.step-centered .step-entry:after {
+    clear: both;
+}
+
+.step-centered .step-entry:before, .step-centered .step-entry:after {
+    content: " ";
+    display: table;
+}
+
+.step-centered .step-entry:after {
+    clear: both;
+}
+
+.step-centered .step-entry.begin {
+    margin-bottom: 0;
+}
+
+.step-centered .step-entry.left-aligned {
+    float: left;
+}
+
+.step-centered .step-entry.left-aligned .step-entry-inner {
+    margin-left: 0;
+    margin-right: -18px;
+}
+
+.step-centered .step-entry.left-aligned .step-entry-inner .step-time {
+    left: auto;
+    right: -100px;
+    text-align: left;
+}
+
+.step-centered .step-entry.left-aligned .step-entry-inner .step-icon {
+    float: right;
+}
+
+.step-centered .step-entry.left-aligned .step-entry-inner .step-label {
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+.step-centered .step-entry.left-aligned .step-entry-inner .step-label:after {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: -9px;
+}
+
+.step-centered .step-entry .step-entry-inner {
+position: relative;
+margin-left: -20px;
+}
+
+.step-centered .step-entry .step-entry-inner:before, .step-centered .step-entry .step-entry-inner:after {
+content: " ";
+display: table;
+}
+
+.step-centered .step-entry .step-entry-inner:after {
+clear: both;
+}
+
+.step-centered .step-entry .step-entry-inner:before, .step-centered .step-entry .step-entry-inner:after {
+content: " ";
+display: table;
+}
+
+.step-centered .step-entry .step-entry-inner:after {
+clear: both;
+}
+
+.step-centered .step-entry .step-entry-inner .step-time {
+position: absolute;
+left: -100px;
+text-align: right;
+padding: 10px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.step-centered .step-entry .step-entry-inner .step-time > span {
+display: block;
+}
+
+.step-centered .step-entry .step-entry-inner .step-time > span:first-child {
+font-size: 15px;
+font-weight: bold;
+}
+
+.step-centered .step-entry .step-entry-inner .step-time > span:last-child {
+font-size: 12px;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon {
+background: #fff;
+color: #000;
+font-size: 16px;
+font-weight: bold;
+display: block;
+width: 40px;
+height: 40px;
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+text-align: center;
+-moz-box-shadow: 0 0 0 5px #f5f5f6;
+-webkit-box-shadow: 0 0 0 5px #f5f5f6;
+box-shadow: 0 0 0 5px #f5f5f6;
+line-height: 40px;
+font-size: 15px;
+float: left;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-active{
+color: #000;
+font-size: 16px;
+font-weight: bold;
+-moz-box-shadow: 0 0 0 2px #FF0000;
+-webkit-box-shadow: 0 0 0 2px #FF0000;
+box-shadow: 0 0 0 2px #FF0000;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-primary {
+background-color: #303641;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-secondary {
+background-color: #ee4749;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-success {
+background-color: #00a651;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-info {
+background-color: #21a9e1;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-warning {
+background-color: #fad839;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.bg-danger {
+background-color: #cc2424;
+color: #fff;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label {
+position: relative;
+padding-left: 18px;
+padding-bottom: 0px;
+padding-right: 0px;
+margin-left: 60px;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label:after {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label h2, .step-centered .step-entry .step-entry-inner .step-label p {
+color: #000;
+font-family: "Roboto",sans-serif;
+font-size: 12px;
+margin: 0;
+line-height: 1.428571429;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label p + p {
+margin-top: 15px;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label h2 {
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label h2 a {
+color: #303641;
+}
+
+.step-centered .step-entry .step-entry-inner .step-label h2 span {
+-webkit-opacity: .6;
+-moz-opacity: .6;
+opacity: .6;
+-ms-filter: alpha(opacity=60);
+filter: alpha(opacity=60);
+}
+
+.step-centered .step-entry .step-entry-inner .step-icon.step-muted {
+    color: #777777; 
+}

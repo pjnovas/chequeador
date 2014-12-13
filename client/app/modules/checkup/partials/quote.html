@@ -1,0 +1,109 @@
+<div class="container col-md-12" ng-controller="CheckupQuoteController" >
+
+        <div class="step-centered">
+
+            <article class="step-entry">
+
+                <div class="row">
+                    <div class="step-entry-inner col-md-2">
+
+                        <div class="step-icon bg-active">
+                            1
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="step-icon step-muted">
+                            2
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="step-icon step-muted">
+                            3
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="step-icon step-muted">
+                            4
+                        </div>
+                        <div class="step-label">
+                        </div>
+
+                    </div>
+                    <div class="well-sm col-md-9" ng-switch on="isCheckupPersisted()">
+                        <div ng-switch-when="false">
+        
+                            <form  ng-submit="addCheckup()">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <textarea name="text" ng-model="checkup.quote.text" class="form-control input-lg" rows="{{quote_rows}}" cols="25" required="required" placeholder="¿Qué frase textual chequearías?" ng-blur="minus_size()" ng-focus="max_size()"></textarea>
+                                        <span class="btn center-block" ng-show="quote_rows == 12" style="position:relative;top: -30px">Listo</span>
+                                    </div>
+                                    <div class="form-group" ng-show="quote_rows == 3">
+                                        <input type="text"  ng-model="checkup.quote.author" class="form-control input-lg" id="name" placeholder="¿Quién es el autor de la frase?" required="required" />
+                                    </div>
+                                    <div class="form-group" ng-show="quote_rows == 3">
+                                        <input type="text" ng-model="checkup.quote.where" class="form-control input-lg" placeholder="¿Dónde la dijo?" required="required" />
+                                    </div>
+                                    <div class="form-group col-md-6 resetSelect" ng-show="quote_rows == 3">
+                                        <select class="form-control input-lg" ng-model="checkup.quote.category" ng-options="category.description for category in categories"></select>
+                                    </div>
+                                    <div class="form-group" ng-show="quote_rows == 3">
+                                        <label>
+                                            <input type="checkbox" class="" ng-model="checkup.quote.checked" required="required">
+                                            No es ni opinión, ni proyección y contiene datos contrastables
+                                        </label>
+                                    </div>
+             
+                                </div>
+                                <div class="row" ng-show="quote_rows == 3">
+                                    <div class="col-md-offset-5 col-md-3">
+                                        <button type="submit" class="btn">
+                                            Siguiente
+                                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                 
+                                </div>
+                            </form>
+                        </div>
+                        <div ng-switch-when="true">
+                            <br/>
+                            <br/>
+                                <div class="row">
+                                    <div class="text-center col-md-offset-3 col-md-8">
+                                        <h1>¡Felicitaciones!</h1>
+                                        <h5>Finalizaste con éxito el primer paso!</h5>
+                                    </div>
+                                </div>
+
+                            <br/>
+
+                                <div class="row">
+                                    <div class="col-md-offset-4 col-md-3">
+                                        <!--button class="btn" ng-click="close()"-->
+                                        <a class="btn" ng-href="#/checkup/{{checkup.id}}">
+                                               Ir al siguiente paso
+                                                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                        </a>
+                                    </div>
+                 
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    
+</div>
+

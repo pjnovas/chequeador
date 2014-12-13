@@ -1,0 +1,53 @@
+    <div class="status-bar row">
+        <div class="col-md-9 col-xs-12 status-action">
+            <a ng-href="#/checkup/new" ng-show="user_id">
+                Iniciar un Chequeo 
+                <img src="/static/img/flecha2.png" />
+            </a>
+            <a ng-href="#/users/login?url=home" ng-show="!user_id">
+                Iniciar un Chequeo 
+                <img src="/static/img/flecha2.png" />
+            </a>
+        </div>
+        <div class="col-md-3 text-left help-action hidden-xs">
+            <span id="help-action"> Ayuda </span>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="row">
+
+            <div id="main-content" class="col-md-9 col-xs-12">
+                <div ui-view></div>
+            </div>
+            
+            <div id="sidebar-wrapper" class="col-md-3 hidden-xs">
+                <div class="sidebar-module sidebar-module-inset help-container" ng-controller="HelpController">
+                    <ng-include src="'modules/help/partials/text.html'"/>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+        <script>
+            $('#help-action').on('click', function(e) {
+                e.preventDefault();
+                var sidebar_collapsed = $( "#sidebar-wrapper" ).hasClass( "collap" );
+                if(sidebar_collapsed) {
+                    $('#sidebar-wrapper').removeClass('collap');
+                    $('#sidebar-wrapper').addClass('col-md-3');
+                    $('#main-content').removeClass('col-md-12');
+                    $('#main-content').addClass('col-md-9');
+                } else {
+                    $('#sidebar-wrapper').removeClass('col-md-3');
+                    $('#sidebar-wrapper').addClass('collap');
+                    $('#main-content').removeClass('col-md-9');
+                    $('#main-content').addClass('col-md-12');
+                }
+            });
+        </script>
+
+

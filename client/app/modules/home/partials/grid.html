@@ -1,0 +1,45 @@
+<div class="row filters-container">
+    <ng-include src="'modules/home/partials/filter.html'"/>
+</div>
+<div class="row checkup-item" ng-repeat="checkup in filteredCheckups">
+    <div class="col-md-12 checkup-row" data-checkup-id="{{checkup.id}}" >
+        <div class="checkup-body">
+            <div class="col-md-8 col-xs-10">
+                <span class="checkup-status {{checkup.phase}}"></span>
+                <a class="quote-text" ng-href="#/checkup/{{checkup.id}}">
+                    <span>{{checkup.quote.text}}
+                        <span class="checkup-list-entity text-muted">
+                        .&nbsp;  
+                         {{checkup.entity.name}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="votacion col-md-2 col-xs-2">
+                <div class="voteBox text-center {{getClassByRate(checkup.rate)}} {{hasVote(checkup.id).class}}" style="width: auto; font-size:14pt;">
+                    <div class="text-center icon-up">
+                        <i class="glyphicon glyphicon-chevron-up" ng-click="voteUp(checkup.id)" title="+1" ng-show="user_id"></i>
+                    </div>
+                    <div class="text-center voteCount">
+                        <span ng-show="checkup.rate > 0">+</span>{{checkup.rate}}
+                    </div>
+                    <div class="text-center icon-down">
+                        <i class="glyphicon glyphicon-chevron-down" ng-click="voteDown(checkup.id)" title="-1" ng-show="user_id"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 checkup-collaborators hidden-xs">
+                <small>Colaboraron</small>
+                <div class="collabora">
+                    <ul class="list-inline">
+                        <li ng-repeat="collaborator in getCollaborators(checkup.id)">
+                            <a ng-href="/#/users/profile/{{collaborator.made_by}}">
+                                <img class="login-picture" src="{{collaborator.picture}}" title="{{collaborator.username}}" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

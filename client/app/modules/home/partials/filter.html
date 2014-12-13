@@ -1,0 +1,26 @@
+<nav class="navbar navbar-static-top checkup-list-filter-navbar" role="navigation">
+  <div class="container-fluid filter-bar">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#filter-navbar">
+        <span class="sr-only">Filtros</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse filters" id="filter-navbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="filter" ng-click="filterBy('all')">Todos los chequeos</a></li>
+        <li><a class="filter" ng-click="filterBy('finish')">Finalizados</a></li>
+        <li><a class="filter" ng-click="filterBy('in_progress')">En Proceso</a></li>
+        <li class="dropdown dropdown-toggle filter" data-toggle="dropdown" role="button" aria-expanded="false">
+          Por Tema<span class="caret"></span>
+          <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="category in categories"><a href="" ng-click="filterByCategory(category.id)">{{category.description}}</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,68 @@
+<div class="container" ng-controller="CheckupCreateController" >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form  ng-submit="addCheckup()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="text"> Frase </label>
+                            <textarea name="text" ng-model="checkup.quote.text" class="form-control" rows="9" cols="25" required="required" placeholder="Qué frase textual chequearías?"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="author"> Autor </label>
+                            <input type="text"  ng-model="checkup.quote.author" class="form-control" id="name" placeholder="Quién es el autor de la frase?" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="where"> Dónde </label>
+                            <div class="input-group">
+                                <input type="text" ng-model="checkup.quote.where" class="form-control" placeholder="Dónde la dijo?" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category"> Tema </label>
+                            <select class="form-control" ng-model="checkup.quote.category" ng-options="category.description for category in categories"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rate"> Valorar </label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rate"  ng-model="checkup.quote.rate" placeholder="" required="required" /></div>
+                        </div>
+                    </div>
+ 
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="checkup.quote.chequed"> No es ni opinión, ni proyección y contiene datos contrastables
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Iniciar Chequeo</button>
+                    </div>
+ 
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+            <legend><span class="glyphicon glyphicon-bullhorn"></span> Frase</legend>
+            <address>
+                Chequeado.com selecciona afirmaciones de personajes públicos -políticos, economistas, empresarios, sindicalistas y periodistas, entre otros-, sin discriminar por su orientación partidaria o ideológica.
+
+Los dichos objeto de chequeo deben haber sido expresados en documentos, medios de comunicación o ámbitos públicos. 
+
+Son relevantes para la agenda pública, por el protagonismo de quien los emitió, por el tema aludido o por su repercusión mediática. Por su particular repercusión en la agenda pública, las declaraciones de las más altas autoridades del Estado y del Gobierno, quienquiera sean, merecen una atención privilegiada por parte de Chequeado.com. Un comité editorial, compuesto por el equipo de redacción, analiza el grado de relevancia del material disponible diariamente. No son objeto de verificación opiniones, comentarios o enunciados de compromisos, salvo cuando se sostengan en datos o hechos cuya veracidad pueda ponderarse. Chequeado.com no emite opinión.
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+

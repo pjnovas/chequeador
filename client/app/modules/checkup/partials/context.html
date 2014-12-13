@@ -1,0 +1,121 @@
+<div class="container col-md-12" ng-controller="CheckupContextController" >
+
+        <div class="step-centered">
+
+            <article class="step-entry">
+
+                <div class="row">
+                    <div class="step-entry-inner col-md-2">
+
+                        <div class="step-icon bg-active">
+                            1
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+
+                        <div class="step-icon bg-active">
+                            2
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+
+                        <div class="step-icon bg-active">
+                            3
+                        </div>
+                        <div class="step-label">
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="step-icon step-muted">
+                            4
+                        </div>
+                        <div class="step-label">
+                        </div>
+
+
+                    </div>
+
+                    <div class="well-sm col-md-9" ng-switch on="isPersisted()">
+                        <div ng-switch-when="false">
+        
+                            <form ng-submit="addContext()">
+
+                                <div class="row" ng-repeat="item_context in contexts">
+                                    
+                                    <div class="form-group">
+                                        <h5> por {{item_context.username}}</h5>
+                                        <textarea ng-model="item_context.body" class="form-control" rows="3" cols="25" disabled ></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="row" ng-show="isCreating()">
+                                    <div class="form-group">
+                                        <textarea name="body" ng-model="context.body" class="form-control" rows="3" cols="25" required="required" placeholder="¿Cual es el contexto de la información?
+"></textarea>
+                                    </div>
+
+                                </div>
+
+
+                                <div ng-show="!isCreating()" class="row">
+                                    <button ng-click="addNewContext()" class="btn">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>
+                                        ¿Quisieras analizar el contexto de manera diferente?
+                                        <small ng-click="addNewContext()">Abrir un debate</small> 
+                                </div>
+                     
+
+                                <div class="row">
+                                    <div class="col-md-offset-4 col-md-3">
+                                        <button type="submit" class="btn ">
+                                           Finalizar 
+                                        </button>
+                                    </div>
+                 
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <div ng-switch-when="true">
+
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-8">
+                                    <h1>¡Felicitaciones!</h1>
+                                    <h5>Finalizaste con éxito el tercer paso!</h5>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-3">
+                                    <button class="btn" ng-click="close()">
+                                       Ir al siguiente paso
+                                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+             
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    
+</div>
+
+
