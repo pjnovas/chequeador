@@ -4,7 +4,7 @@
 <div class="row checkup-item" ng-repeat="checkup in filteredCheckups">
     <div class="col-md-12 checkup-row" data-checkup-id="{{checkup.id}}" >
         <div class="checkup-body">
-            <div class="col-md-8 col-xs-10">
+            <div class="col-md-8 col-xs-10 move">
                 <span class="checkup-status {{checkup.phase}}"></span>
                 <a class="quote-text" ng-href="#/checkup/{{checkup.id}}">
                     <span>{{checkup.quote.text}}

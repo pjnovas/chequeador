@@ -87,9 +87,16 @@
                 Es un proyecto de <img class="footer-brand" src="/static/img/logoChqFooter.png"></img>
             </div>
             <div class="sponsor col-md-6 text-right">
-                Acelerado por HackHackers
+                Acelerado por <a target="_blank" href="http://hackslabs.org"><img class="footer-brand" src="/static/img/hl.png"></img></a> <a target="_blank" href="http://www.icfj.org/"><img class="footer-brand" src="/static/img/icfj.png"></img></a>
+                
             </div>
         </div>
+
+        {{#user}}
+        <script>
+            window.user_id = {{user.id}};
+        </script>
+        {{/user}}
 
         <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="/static/bower_components/underscore/underscore-min.js"></script>
@@ -114,12 +121,16 @@
         <script src="/static/modules/checkup/checkup.js"></script>
         <script src="/static/modules/checkup/controllers.js"></script>
         
-        {{#user}}
         <script>
-            window.user_id = {{user.id}};
-        </script>
-        {{/user}}
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+            ga('create', 'UA-57680692-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
 
     </body>
 </html>
