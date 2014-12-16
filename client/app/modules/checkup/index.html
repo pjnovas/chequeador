@@ -1,6 +1,9 @@
     <div class="status-bar row">
         <div class="col-md-9 col-xs-12 status-action" >
             <a ng-click="goControlPanel()" href="">Paso a Paso </a>
+            <span class="status-step-definition" ng-show="step_definition">
+                {{step_definition}}
+            </span>
         </div>
         <div class="col-md-3 text-left help-action">
             <span id="help-action"> Ayuda </span>

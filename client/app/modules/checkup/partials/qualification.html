@@ -75,6 +75,37 @@
              
                             </div>
 
+                            <br/>
+                            <div class="text-center">
+                                Las calificaciones:
+                            </div>
+                            <div class="col-md-3 qualification-col-1" ng-repeat="calification in quality_measures">
+                                <span class="qual-1-description text-center center-block">{{calification.description}}</span>
+                                <div class="row score-col"> 
+                                    <div ng-repeat="item in scoreByType(calification.id )" >
+
+                                        <div class="score-group-1" ng-show="votesCount(item.id) > 0">
+                                            <div >
+                                                <span class="score-1-description ">{{item.description}}</span>
+                                            </div>
+                                            <div >
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.id)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage(item.id)}}%;">
+                                                        {{percentage(item.id)}}%
+                                                        <span class="text-left">- votos: {{votesCount(item.id)}} </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- score-col -->
+                            </div>
+
+
+
+
+
+
                             <!--button ng-click="addNewQualification()" class="btn">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             </button>

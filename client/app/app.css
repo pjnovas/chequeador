@@ -85,10 +85,23 @@ a:hover, a:visited, a:link, a:active {
 }
 
 
+.status-step-definition {
+	font-family:"Roboto", sans-serif;
+	font-weight:200;
+	font-size: 14px;
+    text-transform: none;
+    padding-left: 10px;
+    color: #FFF;
+    border-left-style: solid;
+    border-left-color: #ffffff;
+    border-left-width: 1px;
+}
+
 .status-bar a {
 	font-family:"Roboto", sans-serif;
 	font-weight:300;
     color: #FFF;
+    padding-right: 10px;
 }
 
 
@@ -450,6 +463,36 @@ h5, .call-atention {
 
 .qualify-item-preview.voted .score-label {
     color: #000;
+}
+
+.qualification-col-1 {
+    border-right-color: #ccc;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.qual-1-description {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px;
+}
+
+.score-group-1 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.score-group-1 .score-1-description {
+    font-size: 14px;
+}
+
+.score-group-1 .progress {
+    height: 20px;
+}
+
+.score-group-1 .progress-bar {
+    background-image: linear-gradient(to bottom, #000 0px, #000 100%);
+    background-repeat: repeat-x;
 }
 
 
