@@ -7,7 +7,7 @@ chequeador
 
 About Platform
 =====
-**chequeado** backend is build on node.js. The client is an angular.js app. 
+**chequeado** backend is built on node.js. The client is an angular.js app. 
 
 
 Install
