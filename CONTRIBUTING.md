@@ -66,7 +66,7 @@ reported. Especially, why do you consider this to be a bug? What do you expect t
 * Server OS: CentOS 6.4
 * Node Version: 0.10.16
 * Browser: Chrome 39.0.2171.71
-```
+
 
 <a name="features"></a>
 ### Feature Requests
