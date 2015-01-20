@@ -35,3 +35,41 @@ In your `config/config.json`:
 * `session`: Secret session key
 
 In your `config/keys.json`you should set the social tokens for apps (twitter, facebook, etc)
+
+
+Structure
+=========
+
+Client (angular.js)
+===============
+Location:  **/client/app**
+
+Modules:
+ - checkup:  implements checkup methodology steps
+ - home: the main grid
+ - site: page wrapper (header, footer, etc)
+ - user: loguin/profile
+ - help: context help
+
+Services: 
+REST client`/client/app/js/services.js`
+
+Server (node.js)
+=====
+
+Main Technologies:
+ - [Express 4](http://expressjs.com/)
+ - [Bookshelf](bookshelfjs.org) - [Knex](knexjs.org)
+ - [Passport](passportjs.org)
+ - [When](https://github.com/cujojs/when)
+
+Directory structure:
+├── server.js  - Main flow
+├── routes - Flow distribution
+├── api - Logic controllers
+├── models - Persistence maps
+├── sql - Sql database scripts
+├── auth.js - Authentication/Authorization logic
+├── config - App parameters
+└── views - Html template for the single page app
+
