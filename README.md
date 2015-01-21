@@ -63,13 +63,13 @@ Main Technologies:
  - [Passport](passportjs.org)
  - [When](https://github.com/cujojs/when)
 
-Directory structure:
-├── server.js  - Main flow
-├── routes - Flow distribution
-├── api - Logic controllers
-├── models - Persistence maps
-├── sql - Sql database scripts
-├── auth.js - Authentication/Authorization logic
-├── config - App parameters
-└── views - Html template for the single page app
+Directory structure:  
+├── server.js  - Main flow  
+├── routes - Flow distribution  
+├── api - Logic controllers  
+├── models - Persistence maps  
+├── sql - Sql database scripts  
+├── auth.js - Authentication/Authorization logic  
+├── config - App parameters  
+└── views - Html template for the single page app  
 
